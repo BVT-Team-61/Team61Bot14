@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.Team61Bot14.OI;
 import edu.wpi.first.Team61Bot14.subsystems.DriveTrain;
 import edu.wpi.first.Team61Bot14.subsystems.Arm;
-import edu.wpi.first.Team61Bot14.subsystems.Shifter;
+import edu.wpi.first.Team61Bot14.subsystems.Grasper;
 import edu.wpi.first.Team61Bot14.subsystems.Launcher;
 
 
@@ -23,7 +23,7 @@ public abstract class CommandBase extends Command {
     public static DriveTrain drivetrain = new DriveTrain();
     public static Arm arm = new Arm();
     public static Launcher launcher = new Launcher();
-    public static Shifter shifter = new Shifter();
+    public static Grasper shifter = new Grasper();
     
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely

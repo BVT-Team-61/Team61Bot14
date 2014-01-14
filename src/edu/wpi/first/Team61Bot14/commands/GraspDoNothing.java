@@ -6,14 +6,14 @@ package edu.wpi.first.Team61Bot14.commands;
 
 /**
  *
- * @author Jack Cone
+ * @author FrankAdmin
  */
-public class ShiftToRelease extends CommandBase {
+public class GraspDoNothing extends CommandBase {
     
-    public ShiftToRelease() {
+    public GraspDoNothing() {
         // Use requires() here to declare subsystem dependencies
-         requires(shifter);
-         setTimeout(0.2);
+        // eg. requires(chassis);
+        requires(shifter);
     }
 
     // Called just before this Command runs the first time
@@ -22,19 +22,17 @@ public class ShiftToRelease extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    
-    shifter.shiftToGraspOn();
-    
+        //System.out.println("ShifterDoNothing()");
+        shifter.doNothing();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isTimedOut();
+        return false;
     }
 
-    // Called once aftisTimedOut()er isFinished returns true
+    // Called once after isFinished returns true
     protected void end() {
-        shifter.shiftToGraspOff();
     }
 
     // Called when another command which requires one or more of the same
