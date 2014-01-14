@@ -1,5 +1,6 @@
 ._*
 private.xml
+*.class
 
 #################
 ## Eclipse
