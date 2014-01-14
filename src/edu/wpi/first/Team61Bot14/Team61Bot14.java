@@ -21,7 +21,7 @@ import edu.wpi.first.Team61Bot14.commands.ExampleCommand;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class Team61Robot extends IterativeRobot {
+public class Team61Bot14 extends IterativeRobot {
 
     Command autonomousCommand;
 
