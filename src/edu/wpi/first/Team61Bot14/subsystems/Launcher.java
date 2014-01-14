@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  * @author William
  */
-public class Arm extends Subsystem {
+public class Launcher extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -19,19 +19,16 @@ public class Arm extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    
-    public void moveUp() {
-        
+    public void kickUp() {
+        // Fast as possible
     }
     
-    public void moveDown() {
-        
+    public void kickDown() {
+        // Less speed to reduce impact
     }
     
     public boolean getPos() {
-        //returns current position of arm
-        //True if up - False if Down
+        // True is up - False is down
         return false;
     }
-    
 }

@@ -1,6 +1,6 @@
 MIDlet-Name: Team61-FRCBot14
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
-MIDlet-1: Team61Bot14, , edu.wpi.first.Team61Bot14.Team61Bot14
+MIDlet-1: Launch, , edu.wpi.first.Team61Bot14.Launch
 MicroEdition-Profile: IMP-1.0
 MicroEdition-Configuration: CLDC-1.1

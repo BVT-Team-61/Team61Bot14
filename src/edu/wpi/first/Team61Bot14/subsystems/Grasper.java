@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  * @author William
  */
-public class Platform extends Subsystem {
+public class Grasper extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -19,11 +19,18 @@ public class Platform extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    public void kickUp() {
+    public void graspIn() {
         
     }
     
-    public void kickDown() { //*??* Can this be combined w/ kickUp?
+    public void graspOut() {
         
     }
+
+    public boolean getGrasp() {
+        //returns grasp state
+        //True if grasped - False if released
+        return false;
+    }
+    
 }
