@@ -73,8 +73,7 @@ public class OI {
     public boolean weAreReversing (){
         if (reverseButton.get()) {
             reverseDriveMode = false;
-        }
-        else if (forwardButton.get()) {
+        } else if (forwardButton.get()) {
             reverseDriveMode= true;
         }
         return reverseDriveMode ;

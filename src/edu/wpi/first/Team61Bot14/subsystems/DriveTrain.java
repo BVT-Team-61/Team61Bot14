@@ -92,42 +92,26 @@ public class DriveTrain extends PIDSubsystem {
      * 
      * @param speed 
      */
-    private void moveLeftMotor(double speed)
-    {
+    private void moveLeftMotor(double speed) {
         //leftMotor.set(speed*-1.0);
       
-       if (speed < 0.0 )
-       { 
-           leftMotor.set (speed*-1.0);
-               
-       }
-               
-        else if (speed > 0.0)
-        {
-            leftMotor.set(0.0);
-        }
-        else
-        {
-            leftMotor.set(speed*-1.0);
-        }
-        
+       if (speed < 0.0 ) { 
+           leftMotor.set (speed*-1.0);    
+       } else if (speed > 0.0) {
+           leftMotor.set(0.0);
+       } else {
+           leftMotor.set(speed*-1.0);
+       }   
     }
     
-    private void moveRightMotor(double speed)
-    {
+    private void moveRightMotor(double speed) {
       //rightMotor.set(speed);
         //System.out.println("limit = " + bottomLimit.getSmartDashboardType());      
-        if (speed< 0.0)
-        {
+        if (speed< 0.0) {
             rightMotor.set(speed);
-        }
-       
-        else if (speed > 0.0)
-        {
+        } else if (speed > 0.0) {
             rightMotor.set(0.0);
-        }
-        else
-        {
+        } else {
             rightMotor.set(speed);
         }
         
