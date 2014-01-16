@@ -71,14 +71,13 @@ public class OI {
         return true;
     }
     public boolean weAreReversing (){
-        
         if (reverseButton.get()) {
             reverseDriveMode = false;
         }
-    else if (forwardButton.get()) {
-        reverseDriveMode= true;
-    }
-    return reverseDriveMode ;
+        else if (forwardButton.get()) {
+            reverseDriveMode= true;
+        }
+        return reverseDriveMode ;
     }
     
     public double getLeftSpeed() {

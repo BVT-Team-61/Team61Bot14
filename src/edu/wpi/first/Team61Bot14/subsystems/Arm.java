@@ -33,5 +33,4 @@ public class Arm extends Subsystem {
         //True if up - False if Down
         return false;
     }
-    
 }

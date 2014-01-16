@@ -12,19 +12,18 @@ public class GraspReturn extends CommandBase {
     
     public GraspReturn() {
         // Use requires() here to declare subsystem dependencies
-         requires(shifter);
-         setTimeout(0.2);
+        requires(shifter);
+        setTimeout(0.2);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    
-    shifter.shiftToGraspOn();
-    
+        shifter.shiftToGraspOn();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -40,5 +39,6 @@ public class GraspReturn extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        
     }
 }

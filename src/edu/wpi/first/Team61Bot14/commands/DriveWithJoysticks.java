@@ -24,18 +24,13 @@ public class DriveWithJoysticks extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         if (oi.weAreDriving()) {
-           
-          if (oi.weAreReversing()){
-              drivetrain.reverseTankDrive(oi.getLeftSpeed()*-1.0,oi.getRightSpeed());
-          }
-           else
-          {
-              drivetrain.tankDrive(oi.getLeftSpeed(),oi.getRightSpeed());
-          }
-        }
-        else {
+            if (oi.weAreReversing()){
+                drivetrain.reverseTankDrive(oi.getLeftSpeed()*-1.0,oi.getRightSpeed());
+            } else {
+                drivetrain.tankDrive(oi.getLeftSpeed(),oi.getRightSpeed());
+            }
+        } else {
             drivetrain.climb(oi.getRightSpeed());
-        
         }
     }
     // Make this return true when this Command no longer needs to run execute()

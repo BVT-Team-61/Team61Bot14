@@ -19,6 +19,7 @@ public class Launcher extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
     public void kickUp() {
         // Fast as possible
     }
@@ -28,6 +29,7 @@ public class Launcher extends Subsystem {
     }
     
     public boolean getPos() {
+        //returns current position of launcher
         // True is up - False is down
         return false;
     }
