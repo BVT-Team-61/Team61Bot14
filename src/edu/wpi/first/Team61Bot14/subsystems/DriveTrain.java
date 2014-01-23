@@ -6,7 +6,7 @@ package edu.wpi.first.Team61Bot14.subsystems;
 
 import edu.wpi.first.Team61Bot14.RobotMap;
 import edu.wpi.first.Team61Bot14.commands.DriveWithJoysticks;
-//import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
  */
 public class DriveTrain extends PIDSubsystem {
     
+    private boolean debugging = true;
 
     private static final double Kp = 0.0;
     private static final double Ki = 0.0;
@@ -29,6 +30,8 @@ public class DriveTrain extends PIDSubsystem {
     
     // private DigitalInput leftTopLimit = new DigitalInput(RobotMap.leftTopLimitChannel);
     // private DigitalInput leftBottomLimit = new DigitalInput(RobotMap.leftBottomLimitChannel);
+   
+    private DigitalInput bottomLimit = new DigitalInput(RobotMap.bottomLimitChannel);
 
     // Initialize your subsystem here
     public DriveTrain() {
@@ -87,34 +90,51 @@ public class DriveTrain extends PIDSubsystem {
         moveLeftMotor(right);
         moveRightMotor(right);
     }
-    
     /**
      * 
      * @param speed 
      */
-    private void moveLeftMotor(double speed) {
+    
+    private void moveLeftMotor(double speed)
+    {
         //leftMotor.set(speed*-1.0);
       
-       if (speed < 0.0 ) { 
-           leftMotor.set (speed*-1.0);    
-       } else if (speed > 0.0) {
-           leftMotor.set(0.0);
-       } else {
-           leftMotor.set(speed*-1.0);
-       }   
+       if (speed < 0.0 )
+       { 
+           leftMotor.set (speed*-1.0);
+               
+       }
+               
+              else if (speed > 0.0 && !bottomLimit.get())
+        {
+            leftMotor.set(0.0);
+        }
+        else
+        {
+            leftMotor.set(speed*-1.0);
+        }
+        
     }
     
-    private void moveRightMotor(double speed) {
+    private void moveRightMotor(double speed)
+    {
       //rightMotor.set(speed);
         //System.out.println("limit = " + bottomLimit.getSmartDashboardType());      
-        if (speed< 0.0) {
+        if (speed< 0.0)
+        {
             rightMotor.set(speed);
-        } else if (speed > 0.0) {
+        }
+       
+        else if (speed > 0.0 && !bottomLimit.get())
+        {
             rightMotor.set(0.0);
-        } else {
+        }
+        else
+        {
             rightMotor.set(speed);
         }
         
     }
+
 }
  

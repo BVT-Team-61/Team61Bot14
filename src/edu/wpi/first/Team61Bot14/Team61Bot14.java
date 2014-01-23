@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.Team61Bot14.commands.CommandBase;
 import edu.wpi.first.Team61Bot14.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.Compressor;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,18 +25,26 @@ import edu.wpi.first.Team61Bot14.commands.ExampleCommand;
 public class Team61Bot14 extends IterativeRobot {
 
     Command autonomousCommand;
+    
+    private Compressor compressor;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-        // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
+       //autonomousCommand = new AutonomousGroup();
 
-        // Initialize all subsystems
-        CommandBase.init();
-    }
+       // Initialize all subsystems
+
+       // Make compressor active on startup so it can be used in the pits
+       compressor = new Compressor(RobotMap.compressorRelay,RobotMap.compressorSensor);
+       compressor.start();       
+       // compressor.stop();
+
+
+       CommandBase.init();
+     }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
